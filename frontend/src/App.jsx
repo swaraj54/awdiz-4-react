@@ -13,10 +13,12 @@ import Params from './components/15-09/Params';
 import SingleProduct from './components/15-09/SingleProduct';
 import Mapping from './components/16-09/Mapping';
 import Ternary from './components/16-09/Ternary';
-import { useState } from 'react';
+import { Children, useState } from 'react';
 import StyledComponents from './components/16-09/StyledComponents';
 import Counterse from './components/16-09/Counterse';
 import DynamicStyles from './components/20-09/DynamicStyles';
+import ChildrenProp from './components/22-09/ChildrenProp';
+import Register2 from './components/22-09/Register2';
 
 function App() {
   const [loggedIn, setIsLoggedIn] = useState(false)
@@ -35,10 +37,12 @@ function App() {
         <Route exact path='/params' element={<Params />} />
         <Route exact path='/singleProduct/:id/:name' element={<SingleProduct />} />
         <Route exact path='/mapping' element={<Mapping kuchbhi={'Hii'} names={["Rahul", "Rahul", "Rohit", "Virat", "ghbjn", "ghjk", "ijhuygtfr"]} />} />
-        <Route exact path='/ternary' element={<Ternary loggedIn={loggedIn} setIsLoggedIn={setIsLoggedIn}  />} />
-        <Route exact path='/styled-components' element={<StyledComponents />}/>
-        <Route exact path='/counterse' element={<Counterse />}/>
-        <Route exact path='/dynamic-styles' element={<DynamicStyles />}/>
+        <Route exact path='/ternary' element={<Ternary loggedIn={loggedIn} setIsLoggedIn={setIsLoggedIn} />} />
+        <Route exact path='/styled-components' element={<StyledComponents />} />
+        <Route exact path='/counterse' element={<Counterse />} />
+        <Route exact path='/dynamic-styles' element={<DynamicStyles />} />
+        <Route exact path='/children-prop' element={<ChildrenProp />} />
+        <Route exact path='/register2' element={<Register2 />} />
       </Routes>
     </div>
   );
