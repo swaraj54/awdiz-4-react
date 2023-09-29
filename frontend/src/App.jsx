@@ -19,12 +19,17 @@ import Counterse from './components/16-09/Counterse';
 import DynamicStyles from './components/20-09/DynamicStyles';
 import ChildrenProp from './components/22-09/ChildrenProp';
 import Register2 from './components/22-09/Register2';
+import { ClassComponent } from './components/29-09/ClassComponent';
+import PageNotFound from './components/29-09/PageNotFound';
 
 function App() {
   const [loggedIn, setIsLoggedIn] = useState(false)
   return (
     <div className="App">
+
+      {/* <Navbar /> */}
       <Routes>
+        <Route path='*' element={<PageNotFound />} />
         <Route path='/' element={<Homepage />} />
         <Route exact path='/login' element={<Login />} />
         <Route exact path='/register' element={<Register />} />
@@ -43,7 +48,9 @@ function App() {
         <Route exact path='/dynamic-styles' element={<DynamicStyles />} />
         <Route exact path='/children-prop' element={<ChildrenProp />} />
         <Route exact path='/register2' element={<Register2 />} />
+        <Route exact path='/class-component' element={<ClassComponent />} />
       </Routes>
+      {/* <Footer /> */}
     </div>
   );
 }
