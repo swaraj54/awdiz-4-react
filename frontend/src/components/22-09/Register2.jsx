@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import toast from 'react-hot-toast';
 
 const Register2 = () => {
   const [userData, setUserData] = useState({ name: "", email: "", password: "" });
@@ -16,14 +18,19 @@ const Register2 = () => {
     // alert("Data submitted to backend..")
     if (userData.name && userData.email && userData.password) {
       if (userData.password.length >= 8) {
-        // const response = await axios.post("http://localhost:8000/register", { userData });
-        const response = { data: { success: true } };
-        if (response.data.success) {
-          alert("Registeration successfull.")
-          setUserData({ name: "", email: "", password: "" })
-          router("/")
-        } else {
-          alert(response.data.error)
+        try {
+          const response = await axios.post("http://localhost:8000/register", { userData });
+          // const response = { data: { success: true } };
+          if (response.data.success) {
+            alert("Registeration successfull.")
+            setUserData({ name: "", email: "", password: "" })
+            router("/")
+          } else {
+            throw new Error("Something went wrong..")
+          }
+        } catch (error) {
+          toast.error(error?.message)
+          console.log(error, "error here")
         }
       } else {
         alert("Password must be 8 digit.")
