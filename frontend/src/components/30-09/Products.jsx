@@ -1,10 +1,12 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 const Products = () => {
     const [products, setProducts] = useState([]);
-
+    console.log(products)
+    const router = useNavigate();
     useEffect(() => {
         // toast.success("Page rendered on browser..")
         async function getProducts() {
@@ -21,11 +23,11 @@ const Products = () => {
     return (
         <div>{products?.length ? <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-around" }}>
             {products.map((pro) => (
-                <div style={{ border: "1px solid black", width: "23%", height: "550px", marginBottom: "10px" }}>
+                <div onClick={() => router(`/single-product/${pro.id}`)} style={{ border: "1px solid black", width: "23%", height: "550px", marginBottom: "10px" }}>
                     <img style={{ width: "80%", height: "300px" }} src={pro.image} />
                     <h1>Name :{pro.title}</h1>
                     <h3>Price : {pro.price} $</h3>
-                    <button>Add to cart</button>
+                    <button>View</button>
                 </div>
             ))}
         </div> : <div>Loading...</div>}</div>

@@ -22,6 +22,7 @@ import Register2 from './components/22-09/Register2';
 import { ClassComponent } from './components/29-09/ClassComponent';
 import PageNotFound from './components/29-09/PageNotFound';
 import Products from './components/30-09/Products';
+import SingleProductNew from './components/01-10/SingleProductNew';
 
 function App() {
   const [loggedIn, setIsLoggedIn] = useState(false)
@@ -51,6 +52,7 @@ function App() {
         <Route exact path='/register2' element={<Register2 />} />
         <Route exact path='/class-component' element={<ClassComponent />} />
         <Route exact path='/products' element={<Products />} />
+        <Route exact path='/single-product/:id' element={<SingleProductNew />} />
       </Routes>
       {/* <Footer /> */}
     </div>
