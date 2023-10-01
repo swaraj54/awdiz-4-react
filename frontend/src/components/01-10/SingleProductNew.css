@@ -1,0 +1,12 @@
+#parentDiv {
+    display: flex;
+    justify-content: space-around;
+}
+
+.blackborder {
+    border: 5px solid black;
+}
+
+.w-40 {
+    width: 40%;
+}
