@@ -24,6 +24,7 @@ import PageNotFound from './components/29-09/PageNotFound';
 import Products from './components/30-09/Products';
 import SingleProductNew from './components/01-10/SingleProductNew';
 import AddProduct from './components/04-10/AddProduct';
+import UseMemo from './components/06-10/UseMemo';
 
 function App() {
   const [loggedIn, setIsLoggedIn] = useState(false)
@@ -55,6 +56,7 @@ function App() {
         <Route exact path='/products' element={<Products />} />
         <Route exact path='/single-product/:id' element={<SingleProductNew />} />
         <Route exact path='/add-product' element={<AddProduct />} />
+        <Route exact path='/use-memo' element={<UseMemo />} />
       </Routes>
       {/* <Footer /> */}
     </div>
