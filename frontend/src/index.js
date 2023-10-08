@@ -5,6 +5,7 @@ import App from './App'
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom'
 import { Toaster } from 'react-hot-toast';
+import GlobalContext from './components/Context/GlobalContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -35,7 +36,9 @@ root.render(
           },
         }}
       />
-      <App />
+      <GlobalContext>
+        <App />
+      </GlobalContext>
       {/* if we use function inside self closing brackets it behaves like component */}
     </BrowserRouter>
   </React.StrictMode>
