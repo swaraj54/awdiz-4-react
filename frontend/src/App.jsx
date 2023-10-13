@@ -28,6 +28,8 @@ import UseMemo from './components/06-10/UseMemo';
 import UseCallback from './components/07-10/UseCallback';
 import UseReducer from './components/08-10/UseReducer';
 import TestReducer from './components/08-10/TestReducer';
+import CustomHook from './components/13-10/CustomHook';
+import CustomHookLS from './components/13-10/CustomHookLS';
 
 function App() {
   const [loggedIn, setIsLoggedIn] = useState(false)
@@ -63,6 +65,8 @@ function App() {
         <Route exact path='/use-callback' element={<UseCallback />} />
         <Route exact path='/use-reducer' element={<UseReducer />} />
         <Route exact path='/test-reducer' element={<TestReducer />} />
+        <Route exact path='/custom-hook' element={<CustomHook />} />
+        <Route exact path='/custom-hook-ls' element={<CustomHookLS />} />
       </Routes>
       {/* <Footer /> */}
     </div>

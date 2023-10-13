@@ -18,6 +18,8 @@ function Homepage() {
             <h1>Homepage for Awdiz</h1>
             <h1>Counter : {state.counter}</h1>
             <button onClick={() => dispatch({ type: "INCREMENT" })}>+</button>
+            <button onClick={() => dispatch({ type: "DECREMENT" })}>-</button>
+            <button onClick={() => dispatch({ type: "RESET" })}>Reset</button>
             <button onClick={routerToLogin}>Go to Login</button>
             <button onClick={() => router('/register')}>Go to Register</button>
             <button onClick={() => toast.error("Clickedd")}>Click for toast error</button>
