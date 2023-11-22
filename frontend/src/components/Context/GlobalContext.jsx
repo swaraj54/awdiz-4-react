@@ -1,4 +1,5 @@
-import { createContext, useReducer } from "react";
+import { createContext, useEffect, useReducer } from "react";
+import api from "../../helpers/AxiosConfig";
 
 export const MyContext = createContext();
 
@@ -21,11 +22,12 @@ const GlobalContext = ({ children }) => {
 
     const [state, dispatch] = useReducer(reducer, initialState)
 
+   
+
     return (
         <MyContext.Provider value={{ state, dispatch }}>
             {children}
         </MyContext.Provider>
-
     )
 }
 

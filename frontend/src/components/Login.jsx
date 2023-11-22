@@ -27,7 +27,7 @@ function Login() {
                     if (response.data.success) {
                         localStorage.setItem("my-token", JSON.stringify(response.data.token))
                         Login(response.data.user);
-                        console.log(response.data, "response data")
+                        // console.log(response.data, "response data")
                         toast.success("Login successfull.")
                         setUserData({ email: "", password: "" })
                         router("/")

@@ -25,7 +25,7 @@ const Register2 = () => {
           if (response.data.success) {
             toast.success("Registeration successfull.")
             setUserData({ name: "", email: "", password: "" })
-            router("/")
+            router("/login")
           } else {
             throw new Error("Something went wrong..")
           }
