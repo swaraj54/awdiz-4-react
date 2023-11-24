@@ -35,7 +35,7 @@ function Login() {
                         throw new Error("Something went wrong..")
                     }
                 } catch (error) {
-                    toast.error(error?.message)
+                    toast.error(error?.response.data.message)
                     console.log(error, "error here")
                 }
             } else {
