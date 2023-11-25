@@ -23,6 +23,20 @@ const YourProducts = () => {
         }
     }
 
+    async function deleteProduct(id) {
+        // alert(id)
+        try {
+            const response = await api.delete('/product/delete-product', { params: { id } })
+            if (response.data.success) {
+                getYourProduct()
+                toast.success(response.data.message)
+            }
+        } catch (error) {
+            console.log(error, "error here")
+            toast.error(error?.response.data.message)
+        }
+    }
+
     useEffect(() => {
         if (state?.user && state?.user?.name === undefined) {
             router('/login')
@@ -36,7 +50,16 @@ const YourProducts = () => {
     }, [state])
 
     return (
-        <div>YourProducts</div>
+        <div>
+            {yourProducts.map((pro) => (
+                <div key={pro._id} >
+                    <img src={pro.image} />
+                    <h3>{pro.name}</h3>
+                    <button onClick={() => router(`/update-product/${pro._id}`)}>Update ?</button>
+                    <button onClick={() => deleteProduct(pro._id)}>Delete ?</button>
+                </div>
+            ))}
+        </div>
     )
 }
 
