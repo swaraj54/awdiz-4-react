@@ -1,4 +1,3 @@
-import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import './SingleProductNew.css';
@@ -50,7 +49,7 @@ const SingleProductNew = () => {
             {productData?._id ?
                 <div id='parentDiv'>
                     <div className='blackborder w-40' >
-                        <img style={{ width: "60%", height: "85%" }} src={productData.image} />
+                        <img alt='ubhn' style={{ width: "60%", height: "85%" }} src={productData.image} />
                     </div>
                     <div className='blackborder w-40' >
                         <h1>{productData.name}</h1>

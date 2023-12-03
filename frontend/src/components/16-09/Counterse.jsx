@@ -8,7 +8,7 @@ const Counterse = () => {
         setCounter((prevValue) => prevValue + 1);
     }
     useEffect(() => {
-        if (counter == 10) {
+        if (counter === 10) {
             alert("HII")
         }
     }, [counter])

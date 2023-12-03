@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 
 const SingleProduct = () => {
 
-    const { id, name } = useParams();
+    const { id } = useParams();
 
     return (
         <div>SingleProduct - {id}</div>

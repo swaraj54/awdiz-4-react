@@ -1,4 +1,3 @@
-import axios from 'axios'
 import React, { useContext, useEffect, useState } from 'react'
 import toast from 'react-hot-toast'
 import api from '../../helpers/AxiosConfig'

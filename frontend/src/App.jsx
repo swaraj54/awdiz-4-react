@@ -13,7 +13,7 @@ import Params from './components/15-09/Params';
 import SingleProduct from './components/15-09/SingleProduct';
 import Mapping from './components/16-09/Mapping';
 import Ternary from './components/16-09/Ternary';
-import { Children, useState } from 'react';
+import {  useState } from 'react';
 import StyledComponents from './components/16-09/StyledComponents';
 import Counterse from './components/16-09/Counterse';
 import DynamicStyles from './components/20-09/DynamicStyles';

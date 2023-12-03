@@ -55,7 +55,7 @@ const Cart = () => {
             {cartProducts.length ? <div style={{ display: 'flex', justifyContent: 'space-around' }}>
                 {cartProducts.map((product) => (
                     <div>
-                        <img src={product.image} />
+                        <img alt='..' src={product.image} />
                         <h1>{product.name}</h1>
                         <h1>${product.price}/-</h1>
                         <button onClick={() => deleteProduct(product._id)}>Delete</button>
